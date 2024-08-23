@@ -20,7 +20,7 @@ exports.postForms = async (req, res) => {
         const query = `
             INSERT INTO forms 
                 (Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
         `;
         const values = [Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2];
         
