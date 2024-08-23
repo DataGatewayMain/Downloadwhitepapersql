@@ -15,14 +15,14 @@ exports.getForms = async (req, res) => {
 // POST a new form
 exports.postForms = async (req, res) => {
     try {
-        const {Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2} = req.body;
+        const {Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2,ans3,ans4,ans5,ans6} = req.body;
         
         const query = `
             INSERT INTO forms 
-                (Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?)
+                (Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2,ans3,ans4,ans5,ans6) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?,?,?,?,?,?)
         `;
-        const values = [Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2];
+        const values = [Name, Email, Country, PostCode, Phoneno, companyname, joblevel, jobtitle, revenue, industry, empsize,ans1,ans2,ans3,ans4,ans5,ans6];
         
         const [result] = await pool.query(query, values);
          return res.json({ errors: false, data: result });
